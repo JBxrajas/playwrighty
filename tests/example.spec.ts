@@ -10,8 +10,19 @@ test('Test Mercadolibre Search', async ({ page }) => {
   
   console.log('The search result count', elements.length)
   
-  
   for (let element of elements){
     console.log('this is the element ',element)
   }
+
+
 });
+
+test('Test Dynamic ID buttons', async ({ page }) => {
+  await page.goto('http://www.uitestingplayground.com')
+  await page.getByRole('link', {name:'Dynamic ID'}).click()
+  await page.getByRole('button',{name:'Button with Dynamic ID'}).focus()
+  await page.pause()
+
+
+});
+
